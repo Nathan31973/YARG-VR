@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using YARG.Core.Game;
@@ -50,18 +51,34 @@ namespace YARG.Gameplay.Visuals
 
         public void InitializeColor(ColorProfile.IFretColorProvider fretColorProvider)
         {
+            var t = FindAnyObjectByType<VR_Guitar>();
             for (int i = 0; i < _frets.Count; i++)
             {
                 _frets[i].Initialize(
                     fretColorProvider.GetFretColor(i + 1),
                     fretColorProvider.GetFretInnerColor(i + 1),
                     fretColorProvider.GetParticleColor(i + 1));
-            }
-        }
 
+                if (t.TryGetComponent(out VR_Guitar vrGuitar))
+                {
+                    vrGuitar._frets[i].Initialize(
+                    fretColorProvider.GetFretColor(i + 1),
+                    fretColorProvider.GetFretInnerColor(i + 1),
+                    fretColorProvider.GetParticleColor(i + 1));
+                }
+            }
+
+
+        }
         public void SetPressed(int index, bool pressed)
         {
             _frets[index].SetPressed(pressed);
+            //VR Testing
+            var t = FindAnyObjectByType<VR_Guitar>();
+            if (t.TryGetComponent(out VR_Guitar vrGuitar))
+            {
+                vrGuitar._frets[index].SetPressed(pressed);
+            }
         }
 
         public void SetSustained(int index, bool sustained)
@@ -73,6 +90,13 @@ namespace YARG.Gameplay.Visuals
         {
             _frets[index].PlayHitAnimation();
             _frets[index].PlayHitParticles();
+            //VR Testing
+            var t = FindAnyObjectByType<VR_Guitar>();
+            if (t.TryGetComponent(out VR_Guitar vrGuitar))
+            {
+                vrGuitar._frets[index].PlayHitAnimation();
+                vrGuitar._frets[index].PlayHitParticles();
+            }
         }
 
         public void PlayOpenHitAnimation()
@@ -80,16 +104,34 @@ namespace YARG.Gameplay.Visuals
             foreach (var fret in _frets)
             {
                 fret.PlayHitAnimation();
+
+            }
+            var t = FindAnyObjectByType<VR_Guitar>();
+            if (t.TryGetComponent(out VR_Guitar vrGuitar))
+            {
+                foreach (var fret in vrGuitar._frets)
+                {
+                    fret.PlayHitAnimation();
+                }
             }
         }
 
         public void PlayDrumAnimation(int index, bool particles)
         {
             _frets[index].PlayHitAnimation();
+            var t = FindAnyObjectByType<VR_Guitar>();
+            if (t.TryGetComponent(out VR_Guitar vrGuitar))
+            {
+                vrGuitar._frets[index].PlayHitAnimation();
+            }
 
             if (particles)
             {
                 _frets[index].PlayHitParticles();
+                if (t.TryGetComponent(out VR_Guitar vrGuitar3))
+                {
+                    vrGuitar3._frets[index].PlayHitParticles();
+                }
             }
         }
 
@@ -98,6 +140,14 @@ namespace YARG.Gameplay.Visuals
             foreach (var fret in _frets)
             {
                 fret.SetSustained(false);
+            }
+            var t = FindAnyObjectByType<VR_Guitar>();
+            if (t.TryGetComponent(out VR_Guitar vrGuitar))
+            {
+                foreach (var fret in vrGuitar._frets)
+                {
+                    fret.SetSustained(false);
+                }
             }
         }
     }

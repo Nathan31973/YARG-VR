@@ -97,6 +97,7 @@ namespace YARG.Gameplay.Player
                 SetupFretTheme(Player.Profile.GameMode),
                 Player.ColorProfile.FiveFretGuitar,
                 Player.Profile.LeftyFlip);
+
         }
 
         public override void ResetPracticeSection()
@@ -116,6 +117,7 @@ namespace YARG.Gameplay.Player
             for (var fret = GuitarAction.GreenFret; fret <= GuitarAction.OrangeFret; fret++)
             {
                 _fretArray.SetPressed((int) fret, Engine.IsFretHeld(fret));
+
             }
         }
 

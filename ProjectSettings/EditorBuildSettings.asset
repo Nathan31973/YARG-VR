@@ -27,3 +27,7 @@ EditorBuildSettings:
       type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 2ffed9dcd47320f4986a850f05ff2ad5,
       type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 48e5eeb6366dfd840a7dbb19d72d63ae,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 3b0c9d5e2330ef744a96674e33aa1be3,
+      type: 2}
