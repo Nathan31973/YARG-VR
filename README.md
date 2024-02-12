@@ -45,8 +45,9 @@ YARG (a.k.a. Yet Another Rhythm Game) is a free, open-source, plastic guitar gam
 ## 🥽 VR Support
 Todo
 - [x] Add openXR and XR interaction tool kit
-- [ ] Convert all UI into world space
-- [ ] Toggable 2D/VR switcher
+- [X] Convert all UI into world space
+- [X] Venue support - limited until venues can have a custom VR spawn point
+- [X] Toggle 2D/VR switcher
 - [ ] Grab controller to track guitar (support vive tracker as well)
 - [x] Visual guitar input on guitar model (Kinda there)
 - [ ] Use hands to play guitar (see if this can work on hand tracking devices)
