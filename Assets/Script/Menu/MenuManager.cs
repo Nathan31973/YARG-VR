@@ -71,6 +71,7 @@ namespace YARG.Menu
             if (setActiveImmediate)
             {
                 newMenu.gameObject.SetActive(true);
+                VrManager.instance.UpdateCanvas();
             }
 
             // ... and push it onto the stack
@@ -95,6 +96,7 @@ namespace YARG.Menu
             if (_menus.TryGetValue(menu, out var newMenu))
             {
                 newMenu.gameObject.SetActive(true);
+                VrManager.instance.UpdateCanvas();
             }
             else
             {

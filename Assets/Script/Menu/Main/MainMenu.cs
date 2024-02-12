@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using YARG.Helpers;
 using YARG.Menu.MusicLibrary;
@@ -60,6 +60,7 @@ namespace YARG.Menu.Main
             MusicLibraryMenu.LibraryMode = MusicLibraryMode.QuickPlay;
 
             menu.gameObject.SetActive(true);
+            VrManager.instance.UpdateCanvas();
         }
 
         public void Practice()
@@ -69,6 +70,7 @@ namespace YARG.Menu.Main
             MusicLibraryMenu.LibraryMode = MusicLibraryMode.Practice;
 
             menu.gameObject.SetActive(true);
+            VrManager.instance.UpdateCanvas();
         }
 
         public void Profiles()

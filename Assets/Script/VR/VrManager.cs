@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,12 +8,13 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Management;
 using UnityEngine.XR.OpenXR;
+using YARG.Gameplay.Player;
 
 namespace YARG
 {
     public class VrManager : MonoBehaviour
     {
-        [HideInInspector]public static VrManager instance;
+        [HideInInspector] public static VrManager instance;
         public Transform UiVrLocation;
         public bool VrEnable = false;
         public GameObject XRPlayerControllerPrefab;
@@ -35,7 +37,7 @@ namespace YARG
         // Start is called before the first frame update
         void Start()
         {
-         
+
         }
 
         public void ToggleVR(bool enable)
@@ -64,17 +66,17 @@ namespace YARG
                 Debug.Log("[VRManager] Starting VR");
                 XRPlayer = Instantiate(XRPlayerControllerPrefab);
                 UpdateCanvas();
-                
+
             }
             catch
             {
 
             }
-            
+
         }
         public void DisableVR()
         {
-            
+
             VrEnable = false;
             try
             {
@@ -96,10 +98,55 @@ namespace YARG
         void VRFixOnSceneLoad(Scene scene, LoadSceneMode mode)
         {
             UpdateCanvas();
+            if (XRPlayer == null && VrEnable)
+            {
+                XRPlayer = Instantiate(XRPlayerControllerPrefab);
+            }
         }
-        void UpdateCanvas()
+
+        public void SetupGameplayVR()
         {
-            
+            if (!VrEnable) { return; }
+            StartCoroutine(cameraSetup());
+        }
+
+        private IEnumerator cameraSetup()
+        {
+            yield return new WaitForSeconds(1);
+            UpdateCanvas();
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                Scene scene = SceneManager.GetSceneAt(i);
+
+
+                // Check if the GameObject has a Camera component and its name is "Venue Camera"
+                Camera[] cameras = FindObjectsOfType<Camera>();
+                Debug.LogError("Cameras found" + cameras.Length);
+                foreach (Camera camera in cameras)
+                {
+                    Debug.LogError("Camera found in scene " + scene.name + ": " + camera.gameObject.name);
+                    if (camera.gameObject.name == "Venue Camera")
+                    {
+                        // Do something with the camera
+                        Debug.LogError("Venue Camera found in scene " + scene.name + ": " + camera.gameObject.name);
+                        camera.gameObject.SetActive(false);
+                    }
+                }
+                var highway = FindObjectOfType<FiveFretPlayer>();
+                if(highway != null)
+                {
+                    highway.transform.rotation = Quaternion.Euler(-15,0,0);
+                }
+
+            }
+            XRPlayer.transform.position = new Vector3(0, 100, -5f);
+
+            yield return null;
+        }
+
+        public void UpdateCanvas()
+        {
+
             //getting all scenes
             Scene[] scenes = new Scene[SceneManager.sceneCount];
             for (int i = 0; i < SceneManager.sceneCount; i++)
@@ -117,7 +164,7 @@ namespace YARG
                     {
                         if (VrEnable)
                         {
-                            Debug.LogError("Canvas name " + c.name);
+                            //Debug.LogError("Canvas name " + c.name);
                             c.renderMode = RenderMode.WorldSpace;
                             RectTransform rectTransform = c.GetComponent<RectTransform>();
                             rectTransform.position = new Vector3(UiVrLocation.position.x, UiVrLocation.position.y, UiVrLocation.position.z);
@@ -133,14 +180,15 @@ namespace YARG
                         }
                         else
                         {
-                            c.renderMode = RenderMode.ScreenSpaceCamera;
+                            c.renderMode = RenderMode.ScreenSpaceOverlay;
                         }
                     }
-                    Debug.LogError($"Canvas Found {canvas.Length}");
+                    //ebug.LogError($"Canvas Found {canvas.Length}");
 
                     //finding any main cams and dissable then unless it the XR camera
                     //fetching XR camera
-                    if (XRPlayer != null) {
+                    if (XRPlayer != null)
+                    {
                         GameObject xrRig = FindObjectOfType<XROrigin>().gameObject;
 
                         Camera[] allCameras = FindObjectsOfType<Camera>();
@@ -159,7 +207,7 @@ namespace YARG
                         {
 
                             c.gameObject.SetActive(true);
-                            
+
                         }
                     }
                 }

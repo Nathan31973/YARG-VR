@@ -170,6 +170,7 @@ namespace YARG.Gameplay
             // Loaded, enable updates
             enabled = true;
             IsSongStarted = true;
+            VrManager.instance.SetupGameplayVR();
             _songStarted?.Invoke();
         }
 

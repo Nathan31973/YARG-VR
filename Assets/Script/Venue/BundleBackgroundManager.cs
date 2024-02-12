@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -24,11 +24,13 @@ namespace YARG.Venue
         private void Awake()
         {
             // Move object out of the way, so its effects don't collide with the tracks
-            transform.position += Vector3.forward * 10_000f;
+            //transform.position += Vector3.forward * 10_000f;
+            transform.position = new Vector3(-3.6f,99.4f,-1.35f);
 
             // TODO: FIX
             // Destroy the default camera (venue has its own)
             // Destroy(GameManager.Instance.DefaultCamera.gameObject);
+            
         }
 
         private void OnDestroy()
