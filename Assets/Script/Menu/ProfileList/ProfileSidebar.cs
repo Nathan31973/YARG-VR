@@ -5,6 +5,7 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using YARG.Core;
 using YARG.Core.Game;
@@ -54,6 +55,8 @@ namespace YARG.Menu.ProfileList
         private TMP_InputField _inputCalibrationField;
         [SerializeField]
         private Toggle _leftyFlipToggle;
+        [SerializeField]
+        private Toggle _VrToggle;
         [SerializeField]
         private TMP_Dropdown _engineDropdown;
         [SerializeField]
@@ -159,6 +162,9 @@ namespace YARG.Menu.ProfileList
             {
                 button.interactable = interactable;
             }
+
+            //update vr toggle switch
+            _VrToggle.isOn = VrManager.instance.VrEnable;
         }
 
         public void HideContents()
@@ -250,6 +256,17 @@ namespace YARG.Menu.ProfileList
         public void ChangeLeftyFlip()
         {
             _profile.LeftyFlip = _leftyFlipToggle.isOn;
+        }
+
+        public void VRToggle()
+        {
+            if (VrManager.instance.VrEnable) { VrManager.instance.VrEnable = false; }
+            else { VrManager.instance.VrEnable = true; }
+            _VrToggle.isOn = VrManager.instance.VrEnable;
+            VrManager.instance.ToggleVR(VrManager.instance.VrEnable);
+
+            //dumb hack but we want to reload the scene for VR mode
+            
         }
 
         public void ChangeEngine()
