@@ -52,7 +52,7 @@ Todo
 - [x] Visual guitar input on guitar model (Kinda there)
 - [ ] Use hands to play guitar (see if this can work on hand tracking devices)
 - [ ] rumble support
-- [ ] Uses vr drums
+- [ ] Uses vr drums (virtual drum in the game environment.)
 
 ## 🛡️ License
 
