@@ -49,7 +49,8 @@ Todo
 - [X] Venue support - limited until venues can have a custom VR spawn point
 - [X] Toggle 2D/VR switcher
 - [ ] Grab controller to track guitar (support vive tracker as well)
-- [x] Visual guitar input on guitar model (Kinda there)
+- [x] Visual guitar input on guitar model (Kinda there it a hack method)
+- [X] Custom guitar, drum and mic models (Only show guitars atm)
 - [ ] Use hands to play guitar (see if this can work on hand tracking devices)
 - [ ] rumble support
 - [ ] Uses vr drums (virtual drum in the game environment.)
