@@ -16,6 +16,7 @@ using YARG.Menu.ProfileInfo;
 using YARG.Player;
 using YARG.Scores;
 using YARG.Settings.Customization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
 namespace YARG.Menu.ProfileList
 {
@@ -65,6 +66,8 @@ namespace YARG.Menu.ProfileList
         private TMP_Dropdown _colorProfileDropdown;
         [SerializeField]
         private TMP_Dropdown _cameraPresetDropdown;
+        [SerializeField]
+        private TMP_Dropdown _VrInsturmentDropDown;
 
         [Space]
         [SerializeField]
@@ -122,6 +125,21 @@ namespace YARG.Menu.ProfileList
             _cameraPresetsByIndex =
                 CustomContentManager.CameraSettings.AddOptionsToDropdown(_cameraPresetDropdown)
                     .Select(i => i.Id).ToList();
+
+            //vr hand models selection. this a rough hack to see if this can work but should be dynamic
+            var options = new List<string>();
+            foreach (GameObject obj in VrManager.instance.GuitarModels)
+            {
+                options.Add(obj.name);
+            }
+
+            // Populate the dropdown options
+            _VrInsturmentDropDown.AddOptions(options);
+            _VrInsturmentDropDown.value = VrManager.instance.GuitarModelSelect;
+            if(!VrManager.instance.VrEnable)
+            {
+                _VrInsturmentDropDown.gameObject.SetActive(false);
+            }
         }
 
         public void UpdateSidebar(YargProfile profile, ProfileView profileView)
@@ -260,13 +278,24 @@ namespace YARG.Menu.ProfileList
 
         public void VRToggle()
         {
-            if (VrManager.instance.VrEnable) { VrManager.instance.VrEnable = false; }
-            else { VrManager.instance.VrEnable = true; }
+            if (VrManager.instance.VrEnable)
+            {
+                VrManager.instance.VrEnable = false;
+                _VrInsturmentDropDown.gameObject.SetActive(false);
+            }
+            else
+            {
+                VrManager.instance.VrEnable = true;
+                _VrInsturmentDropDown.gameObject.SetActive(true);
+            }
             _VrToggle.isOn = VrManager.instance.VrEnable;
             VrManager.instance.ToggleVR(VrManager.instance.VrEnable);
+            if (!VrManager.instance.VrEnable)
+            {
+                
+            }
 
-            //dumb hack but we want to reload the scene for VR mode
-            
+
         }
 
         public void ChangeEngine()
@@ -337,6 +366,12 @@ namespace YARG.Menu.ProfileList
         public void ChangeCameraPreset()
         {
             _profile.CameraPreset = _cameraPresetsByIndex[_cameraPresetDropdown.value];
+        }
+
+        public void ChaangeVRInsturment(int index)
+        {
+            VrManager.instance.GuitarModelSelect = index;
+            VrManager.instance.SwapGuitarModel();
         }
     }
 }

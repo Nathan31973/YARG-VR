@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: 93c77883d10961f4591b992d47bd4834
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Strummer_Board_Strummer_BoardMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Strummer_StrummerMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tuner001_Tuner001Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tuner002_Tuner002Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tuner003_Tuner003Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tuner004_Tuner004Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tuner005_Tuner005Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tuner006_Tuner006Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_Main_body_MainMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_Neck_body_NeckMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_lock_body_lockMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button_Back_button_BackMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button_Board001_button_Board001Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button_Board002_button_Board002Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button_DPad_button_DPadMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button_Power_button_PowerMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button_Start_button_StartMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fret_Blue_fret_BlueMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fret_Dividers_fret_DividersMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fret_Dots_fret_DotsMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fret_Green_fret_GreenMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fret_Orange_fret_OrangeMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fret_Red_fret_RedMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fret_Yellow_fret_YellowMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outlet_Cover_outlet_CoverMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outlet_Mic_Backboard_outlet_Mic_BackboardMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outlet_Mic_outlet_MicMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: strap_Lock001_strap_Lock001Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: strap_Lock002_strap_Lock002Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: strap_Lock003_strap_Lock003Mat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whammy_Bar_whammy_BarMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whammy_Border_whammy_BorderMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whammy_Rotator_whammy_RotatorMat
+    second: {fileID: 2100000, guid: 6b1870bfe2125a845afed29a3bd039d5, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0015
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.0015
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

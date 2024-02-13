@@ -1360,6 +1360,10 @@ MonoBehaviour:
   XRPlayerControllerPrefab: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2,
     type: 3}
   bootloaderCanvas: {fileID: 1694016462}
+  GuitarModels:
+  - {fileID: 4602441518678906167, guid: ab203aa1219ef0e479c3d1c51f6067d7, type: 3}
+  - {fileID: 4602441518678906167, guid: b52a665294086c3448c9bd3eacafe82b, type: 3}
+  GuitarModelSelect: 1
 --- !u!4 &911675645
 Transform:
   m_ObjectHideFlags: 0

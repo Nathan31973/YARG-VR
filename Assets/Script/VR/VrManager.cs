@@ -19,8 +19,11 @@ namespace YARG
         public bool VrEnable = false;
         public GameObject XRPlayerControllerPrefab;
         private GameObject XRPlayer;
+        private GameObject InstumentOBJ;
         public Canvas bootloaderCanvas;
 
+        public GameObject[] GuitarModels;
+        public int GuitarModelSelect = 0;
         private void Awake()
         {
             if (instance == null)
@@ -64,7 +67,7 @@ namespace YARG
                 XRGeneralSettings.Instance.Manager.StartSubsystems();
                 XRSettings.enabled = true;
                 Debug.Log("[VRManager] Starting VR");
-                XRPlayer = Instantiate(XRPlayerControllerPrefab);
+                spawnXRController();
                 UpdateCanvas();
 
             }
@@ -100,7 +103,34 @@ namespace YARG
             UpdateCanvas();
             if (XRPlayer == null && VrEnable)
             {
-                XRPlayer = Instantiate(XRPlayerControllerPrefab);
+                spawnXRController();
+            }
+        }
+
+        public void spawnXRController()
+        {
+            if(XRPlayer != null)
+            {
+                Destroy(XRPlayer);
+            }
+            XRPlayer = Instantiate(XRPlayerControllerPrefab);
+            //this should swap base on drums or guitar is selected
+            SwapGuitarModel();
+
+
+        }
+
+        // this should be dynamic and allow drums and mic. short hack for POC
+        public void SwapGuitarModel()
+        {
+            if(GuitarModelSelect <= GuitarModels.Length)
+            {
+                Destroy(InstumentOBJ);
+                InstumentOBJ = Instantiate(GuitarModels[GuitarModelSelect], XRPlayer.GetComponentInChildren<GuitarSocket>().gameObject.transform);
+            }
+            else
+            {
+                Debug.LogError("[VR Manager] Guitar Model spawn failed due to selection out of range");
             }
         }
 

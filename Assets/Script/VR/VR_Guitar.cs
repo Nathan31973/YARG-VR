@@ -15,6 +15,5 @@ namespace YARG
     {
         public Fret[] _frets;
 
-
     }
 }
