@@ -123,6 +123,7 @@ namespace YARG
         // this should be dynamic and allow drums and mic. short hack for POC
         public void SwapGuitarModel()
         {
+            Debug.LogError("VR Manager: Model select " + GuitarModelSelect);
             if(GuitarModelSelect <= GuitarModels.Length)
             {
                 Destroy(InstumentOBJ);
@@ -220,11 +221,12 @@ namespace YARG
                     if (XRPlayer != null)
                     {
                         GameObject xrRig = FindObjectOfType<XROrigin>().gameObject;
+                        GameObject xrSpec = FindObjectOfType<VR_Smooth_SpecCam>().gameObject;
 
                         Camera[] allCameras = FindObjectsOfType<Camera>();
                         foreach (Camera c in allCameras)
                         {
-                            if (c != xrRig.GetComponentInChildren<Camera>())
+                            if (!c.name.ToLower().Contains("vr"))
                             {
                                 c.gameObject.SetActive(false);
                             }
